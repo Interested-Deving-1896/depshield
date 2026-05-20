@@ -1,288 +1,75 @@
-<div align="center">
-  <img src="static/logo.svg" alt="DepShield Logo" width="128" height="128">
-  
-  # DepShield
-  
-  **Dependency Vulnerability Scanner for Secure Software Development**
-  
-  [![Python 3.8+](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/downloads/)
-  [![Flask](https://img.shields.io/badge/Flask-3.0+-green.svg)](https://flask.palletsprojects.com/)
-  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-  [![OSV Database](https://img.shields.io/badge/Powered%20by-OSV%20Database-orange.svg)](https://osv.dev/)
-  
-  [Features](#-features) • [Installation](#-installation) • [Usage](#-usage) • [API](#-api) • [Docker](#-docker) • [Contributing](#-contributing)
-</div>
+[update-readmes]   Mode: rewrite — migrating to template structure...
+# depshield
 
----
+[![Built with Ona](https://ona.com/build-with-ona.svg)](https://app.ona.com/#https://github.com/Interested-Deving-1896/depshield)
 
-## 🛡️ About
+<!-- AI:start:what-it-does -->
+_Description pending._
+<!-- AI:end:what-it-does -->
 
-DepShield is an **SSDLC (Secure Software Development Life Cycle)** tool that scans Git repositories for known vulnerabilities in their dependencies. It leverages the [OSV (Open Source Vulnerabilities)](https://osv.dev/) database to provide accurate, up-to-date vulnerability information.
+## Architecture
 
-### Why DepShield?
+<!-- AI:start:architecture -->
+_Architecture documentation pending._
+<!-- AI:end:architecture -->
 
-- **Fast**: Uses GitHub API to fetch files directly — no cloning required
-- **Real-time Progress**: Server-Sent Events (SSE) provide live scanning updates
-- **Multi-ecosystem**: Supports npm, PyPI, RubyGems, Go, and Packagist
-- **Beautiful UI**: Modern, responsive web interface with Bold Berry theme
-- **Export Ready**: Download reports in JSON or CSV format
-- **No Account Required**: Works with public repositories out of the box
+## Install
 
----
-
-## ✨ Features
-
-| Feature | Description |
-|---------|-------------|
-| 🔍 **Multi-Ecosystem Scanning** | npm, PyPI, RubyGems, Go, Packagist |
-| ⚡ **Lightning Fast** | GitHub API-based scanning, no git clone needed |
-| 📊 **Real-time Progress** | Live updates via Server-Sent Events |
-| 🎨 **Modern UI** | Beautiful Bold Berry color theme |
-| 📥 **Export Reports** | JSON and CSV export with timestamps |
-| 🏷️ **CVE Detection** | Full CVE IDs and CVSS scores |
-| 🔗 **Reference Links** | Direct links to vulnerability details |
-| 🐳 **Docker Ready** | Easy deployment with Docker |
-
-### Supported Dependency Files
-
-| Ecosystem | Files |
-|-----------|-------|
-| **npm** | `package.json` |
-| **Python** | `requirements.txt`, `Pipfile`, `pyproject.toml` |
-| **Ruby** | `Gemfile.lock` |
-| **Go** | `go.mod` |
-| **PHP** | `composer.json` |
-
----
-
-## 🚀 Installation
-
-### Prerequisites
-
-- Python 3.8 or higher
-- pip (Python package manager)
-
-### Quick Start
+<!-- Add installation instructions here. This section is yours — the AI will not modify it. -->
 
 ```bash
-# Clone the repository
-git clone https://github.com/elifsudeates/depshield.git
+git clone https://github.com/Interested-Deving-1896/depshield.git
 cd depshield
-
-# Create virtual environment
-python -m venv .venv
-
-# Activate virtual environment
-# Windows:
-.venv\Scripts\activate
-# Linux/macOS:
-source .venv/bin/activate
-
-# Install dependencies
-pip install -r requirements.txt
-
-# Run the application
-python app.py
 ```
 
-Open your browser and navigate to `http://127.0.0.1:5000`
+## Usage
 
----
+<!-- Add usage examples here. This section is yours — the AI will not modify it. -->
 
-## 📖 Usage
+## Configuration
 
-### Web Interface
+<!-- Document configuration options here. This section is yours — the AI will not modify it. -->
 
-1. Enter a GitHub repository URL (e.g., `https://github.com/expressjs/express`)
-2. Click **"Scan Repository"**
-3. Watch real-time progress as dependencies are analyzed
-4. View vulnerability results sorted by severity
-5. Export reports in JSON or CSV format
+## CI
 
-### Screenshots
+<!-- AI:start:ci -->
+_CI documentation pending._
+<!-- AI:end:ci -->
 
-#### Scanning in Progress
-![Scanning in Progress](static/screenshots/scanning.png)
+## Mirror chain
 
-#### Results Dashboard
-![Results Dashboard](static/screenshots/result-dashboard.png)
-
----
-
-## 🔌 API
-
-DepShield provides a REST API for programmatic access.
-
-### Get Repository Info
-
-```http
-POST /api/repo-info
-Content-Type: application/json
-
-{
-  "url": "https://github.com/expressjs/express"
-}
-```
-
-**Response:**
-```json
-{
-  "name": "express",
-  "owner": "expressjs",
-  "platform": "GitHub",
-  "description": "Fast, unopinionated, minimalist web framework for node.",
-  "stars": 65000,
-  "language": "JavaScript",
-  "avatar": "https://avatars.githubusercontent.com/u/5658226"
-}
-```
-
-### Scan Repository (Streaming)
-
-```http
-GET /api/scan-stream?url=https://github.com/expressjs/express
-```
-
-Returns Server-Sent Events with real-time progress updates.
-
-### Scan Repository (Non-Streaming)
-
-```http
-POST /api/scan
-Content-Type: application/json
-
-{
-  "url": "https://github.com/expressjs/express"
-}
-```
-
-### Export Results
-
-```http
-POST /api/export/json
-POST /api/export/csv
-Content-Type: application/json
-
-{ /* scan results */ }
-```
-
----
-
-## 🐳 Docker
-
-### Build and Run
-
-```bash
-# Build the image
-docker build -t depshield .
-
-# Run the container
-docker run -p 5000:5000 depshield
-```
-
-### Docker Compose
-
-```yaml
-version: '3.8'
-services:
-  depshield:
-    build: .
-    ports:
-      - "5000:5000"
-    restart: unless-stopped
-```
-
----
-
-## 📁 Project Structure
+<!-- AI:start:mirror-chain -->
+This repo is maintained in [`Interested-Deving-1896/depshield`](https://github.com/Interested-Deving-1896/depshield) and mirrored through:
 
 ```
-depshield/
-├── app.py                 # Flask application entry point
-├── depshield/             # Core scanning modules
-│   ├── __init__.py        # Package initialization
-│   ├── config.py          # Configuration settings
-│   ├── logger.py          # Logging utilities
-│   ├── github_client.py   # GitHub API client
-│   ├── parsers.py         # Dependency file parsers
-│   └── scanner.py         # Vulnerability scanner
-├── static/                # Frontend assets
-│   ├── index.html         # Main web interface
-│   ├── logo.svg           # Application logo
-│   └── favicon.svg        # Browser favicon
-├── requirements.txt       # Python dependencies
-├── Dockerfile             # Docker configuration
-├── TEST_REPOS.md          # Test repository links
-└── README.md              # This file
+Interested-Deving-1896/depshield  ──►  OpenOS-Project-OSP/depshield  ──►  OpenOS-Project-Ecosystem-OOC/depshield
 ```
 
----
+Changes flow downstream automatically via the hourly mirror chain in
+[`fork-sync-all`](https://github.com/Interested-Deving-1896/fork-sync-all).
+Direct commits to OSP or OOC are detected and opened as PRs back to `Interested-Deving-1896`.
+<!-- AI:end:mirror-chain -->
 
-## 🧪 Test Repositories
+## Contributors
 
-Check out [TEST_REPOS.md](TEST_REPOS.md) for a curated list of repositories organized by programming language for testing DepShield.
+<!-- AI:start:contributors -->
+_Contributors pending._
+<!-- AI:end:contributors -->
 
-**Quick test links:**
-- Small: `https://github.com/expressjs/express`
-- Medium: `https://github.com/pallets/flask`
-- Large: `https://github.com/django/django`
+## Origins
 
----
+<!-- AI:start:origins -->
+_Original project — no upstream fork._
+<!-- AI:end:origins -->
 
-## 🔧 Configuration
+## Resources
 
-Configuration options are available in `depshield/config.py`:
+<!-- AI:start:resources -->
+_No additional resource files found._
+<!-- AI:end:resources -->
 
-| Setting | Default | Description |
-|---------|---------|-------------|
-| `OSV_API` | `https://api.osv.dev/v1/query` | OSV API endpoint |
-| `GITHUB_API` | `https://api.github.com` | GitHub API endpoint |
-| `GITHUB_TIMEOUT` | `15` | GitHub request timeout (seconds) |
-| `OSV_TIMEOUT` | `10` | OSV request timeout (seconds) |
+## License
 
----
-
-## ⚠️ Limitations
-
-- **GitHub Only**: Currently only supports GitHub repositories
-- **Public Repos**: Works with public repositories (private repos require authentication)
-- **Rate Limits**: GitHub API has rate limits (60 requests/hour unauthenticated)
-- **Nested Dependencies**: Only scans direct dependencies, not transitive ones
-
----
-
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
-
-## 🙏 Acknowledgments
-
-- [OSV (Open Source Vulnerabilities)](https://osv.dev/) for the vulnerability database
-- [Bulma](https://bulma.io/) for the CSS framework
-- [Tabler Icons](https://tabler-icons.io/) for the icon set
-- [Flask](https://flask.palletsprojects.com/) for the web framework
-
----
-
-<div align="center">
-  <p>Made with ❤️ by <a href="https://github.com/elifsudeates">Elif Sude ATES</a></p>
-  <p>
-    <a href="https://github.com/elifsudeates/depshield/issues">Report Bug</a>
-    •
-    <a href="https://github.com/elifsudeates/depshield/issues">Request Feature</a>
-  </p>
-</div>
+<!-- AI:start:license -->
+<!-- License not detected — add a LICENSE file to this repo. -->
+<!-- AI:end:license -->
